@@ -1,0 +1,23 @@
+.nav-menu {
+  display: inline-block;
+  border-right: 2px solid rgba(221, 221, 221, 0.1647058824);
+  height: 100%;
+  margin-left: 2rem;
+
+  list-style: none;
+}
+
+.nav-menu li {
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-menu a {
+  margin-right: 2rem;
+  font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+}
