@@ -1,7 +1,7 @@
 import "../src/styles/VideosCards.scss";
 import data from "../src/js/data.js";
 
-function VideoCard({ item }) {
+function VideoCard({ item }: any) {
   return (
     <div className="video-card">
       <video className="video" src={item.video} controls />
@@ -15,7 +15,7 @@ function VideoCard({ item }) {
 export default function VideoCards() {
   return (
     <main className="video-wrapper">
-      {data.map((item) => (
+      {data.map((item: any) => (
         <VideoCard
           key={item.id}
           item={item}

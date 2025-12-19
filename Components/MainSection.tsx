@@ -1,5 +1,5 @@
-import Navigation from "../Components/NavMenu.jsx";
-import VideoCards from "../Components/Videos.jsx";
+import Navigation from "../Components/NavMenu";
+import VideoCards from "../Components/Videos";
 
 import "../src/styles/MainSection.scss";
 import "../src/styles/VideosCards.scss";
@@ -8,7 +8,7 @@ export default function MainSection() {
     <>
       <div className="main-section-wrapper">
         <Navigation />
-        <div className="video-wrapper">
+        <div className="video-wrapper test">
           <VideoCards />
         </div>
       </div>

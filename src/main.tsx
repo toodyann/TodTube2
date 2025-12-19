@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Header from "../Components/Header.jsx";
-import MainSection from "../Components/MainSection.jsx";
+import Header from "../Components/Header";
+import MainSection from "../Components/MainSection";
 
 import "./styles/index.scss";
 import "./js/data.js";
