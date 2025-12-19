@@ -7,9 +7,9 @@ export default function Header() {
     <header className="header">
       <img className="Logo" src={TodTubeLogo} alt="TodTube-logo" />
       <div className="search-input-wrapper">
-        <input className="input-search" placeholder="Пошук" type="text" />
+        <input className="input-search" placeholder="Пошук" type="search" />
         <button>
-          <img className="search-icon" src={searchIcon} alt="search-icon" />
+          <img className="search-icon" src={searchIcon} alt="search-icon" />{" "}
         </button>
       </div>
     </header>

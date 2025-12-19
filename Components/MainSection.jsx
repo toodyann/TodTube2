@@ -10,9 +10,6 @@ export default function MainSection() {
         <Navigation />
         <div className="video-wrapper">
           <VideoCards />
-          <VideoCards />
-          <VideoCards />
-          <VideoCards />
         </div>
       </div>
     </>

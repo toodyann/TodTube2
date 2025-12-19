@@ -1,17 +1,29 @@
-import Video from "../src/assets/main-video.mp4";
 import "../src/styles/VideosCards.scss";
-function Videos() {
+import data from "../src/js/data.js";
+
+function VideoCard({ item }) {
   return (
-    <video
-      className="videos"
-      controls
-      width="600"
-      src={Video}
-      type="video/mp4"
-    ></video>
+    <div className="video-card">
+      <video className="video" src={item.video} controls />
+      <h4>{item.user}</h4>
+      <p>{item.description}</p>
+      <span>{item.views}</span>
+    </div>
   );
 }
 
 export default function VideoCards() {
-  return <Videos />;
+  return (
+    <main className="video-wrapper">
+      {data.map((item) => (
+        <VideoCard
+          key={item.id}
+          item={item}
+          user={item.user}
+          description={item.description}
+          views={item.views}
+        />
+      ))}
+    </main>
+  );
 }
