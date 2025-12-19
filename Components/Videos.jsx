@@ -7,7 +7,7 @@ function VideoCard({ item }) {
       <video className="video" src={item.video} controls />
       <h4>{item.user}</h4>
       <p>{item.description}</p>
-      <span>{item.views}</span>
+      <span>{item.views} Переглядів</span>
     </div>
   );
 }

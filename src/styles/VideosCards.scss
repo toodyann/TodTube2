@@ -1,12 +1,13 @@
 .video-wrapper {
   margin-top: 30px;
   display: flex;
-  gap: 10px;
+  gap: 50px;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
 }
 
 .video {
-  width: 800px;
+  width: 650px;
+  border-radius: 15px;
 }
