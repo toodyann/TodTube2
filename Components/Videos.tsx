@@ -1,7 +1,15 @@
 import "../src/styles/VideosCards.scss";
-import data from "../src/js/data.js";
+import defaultVideos from "../src/scripts/data.jsx";
 
-function VideoCard({ item }: any) {
+type Video = {
+  id: number;
+  user: string;
+  description: string;
+  views: number;
+  video: string;
+};
+
+function VideoCard({ item }: { item: Video }) {
   return (
     <div className="video-card">
       <video className="video" src={item.video} controls />
@@ -12,17 +20,25 @@ function VideoCard({ item }: any) {
   );
 }
 
-export default function VideoCards() {
+interface Props {
+  query?: string;
+  videos?: Video[];
+}
+
+export default function VideoCards({ query = "", videos }: Props) {
+  const source = videos ?? defaultVideos;
+  const q = (query || "").toLowerCase();
+
+  const filteredVideos = source.filter(
+    (item) =>
+      item.user.toLowerCase().includes(q) ||
+      item.description.toLowerCase().includes(q)
+  );
+
   return (
     <main className="video-wrapper">
-      {data.map((item: any) => (
-        <VideoCard
-          key={item.id}
-          item={item}
-          user={item.user}
-          description={item.description}
-          views={item.views}
-        />
+      {filteredVideos.map((item: Video) => (
+        <VideoCard key={item.id} item={item} />
       ))}
     </main>
   );

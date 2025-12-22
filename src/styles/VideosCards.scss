@@ -1,13 +1,42 @@
 .video-wrapper {
   margin-top: 30px;
   display: flex;
-  gap: 50px;
+  gap: 20px;
   flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
 }
 
 .video {
-  width: 650px;
+  width: 500px;
   border-radius: 15px;
+}
+
+.video-card .content {
+  padding: 12px;
+  color: #fff;
+}
+
+.video-card {
+  border-radius: 30px;
+  color: #ffffffcc;
+  border-radius: 30px;
+  padding: 12px;
+  overflow: hidden;
+  background-color: #181818;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #303030;
+}
+
+.video-card .content {
+  padding: 12px;
+  color: #fff;
+}
+
+.video-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }

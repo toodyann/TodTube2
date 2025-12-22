@@ -2,14 +2,25 @@ import "../src/styles/Header.scss";
 import TodTubeLogo from "../src/assets/TodTube-logo.png";
 import searchIcon from "../src/assets/search-icon.svg";
 
-export default function Header() {
+type Props = {
+  query: string;
+  setQuery: (value: string) => void;
+};
+
+export default function Header({ query, setQuery }: Props) {
   return (
     <header className="header">
       <img className="Logo" src={TodTubeLogo} alt="TodTube-logo" />
       <div className="search-input-wrapper">
-        <input className="input-search" placeholder="Пошук" type="search" />
-        <button>
-          <img className="search-icon" src={searchIcon} alt="search-icon" /> {" "}
+        <input
+          type="text"
+          placeholder="Пошук..."
+          aria-label="Пошук відео"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button type="button" aria-label="Почати пошук">
+          <img className="search-icon" src={searchIcon} alt="search-icon" />
         </button>
       </div>
     </header>
