@@ -11,16 +11,16 @@ import { NotFound } from "./Components/NotFound";
 import { Community } from "./Components/Community";
 import { Playlists } from "./Components/Playlists";
 import { Channels } from "./Components/Channels";
-import { Focus } from "./Components/pages/VideoFocus";
+import Focus from "./Components/pages/VideoFocus";
 
 function Home() {
   const [query, setQuery] = useState("");
 
   return (
     <>
-      <Snowfall color="#82C3d3" />
+      <Snowfall color="#738285ff" />
       <Header query={query} setQuery={setQuery} />
-      <MainSection query={query} videos={videos} />
+      <MainSection query={query} image={videos} />
     </>
   );
 }
@@ -32,7 +32,7 @@ function App() {
       <Route path="/community" element={<Community />} />
       <Route path="/playlists" element={<Playlists />} />
       <Route path="/channels" element={<Channels />} />
-      <Route path="/focus" element={<Focus />} />
+      <Route path="/focus/:id" element={<Focus />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

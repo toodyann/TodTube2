@@ -2,37 +2,24 @@ import "../styles/VideosCards.scss";
 import defaultVideos from "../scripts/data.jsx";
 import { NavLink } from "react-router-dom";
 
-type image = {
+type Video = {
   id: number;
   user: string;
   description: string;
   views: number;
+  video: string;
   image: string;
 };
-
-function VideoCard({ item }: { item: image }) {
-  return (
-    <>
-      <NavLink to="/focus">
-        {" "}
-        <div className="video-card">
-          <img className="video" src={item.image} />
-          {item.user}
-          <p>{item.description}</p>
-          <span>{item.views} Переглядів</span>
-        </div>
-      </NavLink>
-    </>
-  );
-}
-
 interface Props {
   query?: string;
-  image?: image[];
+  videos?: Video[];
 }
 
-export default function VideoCards({ query = "", image }: Props) {
-  const source = image ?? defaultVideos;
+export default function VideoCards({
+  query = "",
+  videos = defaultVideos,
+}: Props) {
+  const source = videos ?? defaultVideos;
   const q = (query || "").toLowerCase();
 
   const filteredVideos = source.filter(
@@ -43,8 +30,15 @@ export default function VideoCards({ query = "", image }: Props) {
 
   return (
     <main className="video-wrapper">
-      {filteredVideos.map((item: image) => (
-        <VideoCard key={item.id} item={item} />
+      {filteredVideos.map((item: Video) => (
+        <NavLink key={item.id} to={`/focus/${item.id}`} className="video-link">
+          <div className="video-card">
+            <img className="prev" src={item.image} />
+            <h4>{item.user}</h4>
+            <p>{item.description}</p>
+            <span>{item.views} Переглядів</span>
+          </div>
+        </NavLink>
       ))}
     </main>
   );
