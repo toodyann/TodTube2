@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import "../src/styles/NavMenu.scss";
 export default function Navigation() {
   return (
@@ -16,7 +17,7 @@ export default function Navigation() {
           <a href="#">Канали</a>
         </li>
         <li>
-          <a href="#">Спільнота</a>
+          <Link to="/community">Спільнота</Link>
         </li>
         <li>
           <a href="#">Про мене</a>

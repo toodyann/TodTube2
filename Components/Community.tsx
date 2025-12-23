@@ -1,0 +1,1 @@
+export const Community = () => <div style={{color: '#fff'}}>Це сторінка спільноти</div>;
