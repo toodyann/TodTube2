@@ -5,7 +5,7 @@
     "lib": ["DOM", "ES2022"],
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -14,8 +14,9 @@
     "strict": false,
     "allowJs": true,
     "noEmit": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "types": ["vite/client"]
   },
-  "include": ["src", "index.html", "vite.config.js", "Components"],
+  "include": ["src", "index.html"],
   "exclude": ["node_modules", "dist"]
 }
