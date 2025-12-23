@@ -1,6 +1,6 @@
-import "../src/styles/Header.scss";
-import TodTubeLogo from "../src/assets/TodTube-logo.png";
-import searchIcon from "../src/assets/search-icon.svg";
+import "../styles/Header.scss";
+import TodTubeLogo from "../assets/TodTube-logo.png";
+import searchIcon from "../assets/search-icon.svg";
 
 type Props = {
   query: string;

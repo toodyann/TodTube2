@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import "../src/styles/NavMenu.scss";
+import { NavLink } from "react-router-dom";
+import "../styles/NavMenu.scss";
 export default function Navigation() {
   return (
     <nav className="nav-menu">
@@ -7,17 +7,15 @@ export default function Navigation() {
         <li>
           <a href="#">Головна</a>
         </li>
+        <li></li>
         <li>
-          <a href="#">Відео</a>
+          <NavLink to="/playlists">Плейлісти</NavLink>
         </li>
         <li>
-          <a href="#">Плейлисти</a>
+          <NavLink to="/channels">Канали</NavLink>
         </li>
         <li>
-          <a href="#">Канали</a>
-        </li>
-        <li>
-          <Link to="/community">Спільнота</Link>
+          <NavLink to="/community">Спільнота</NavLink>
         </li>
         <li>
           <a href="#">Про мене</a>

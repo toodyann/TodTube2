@@ -1,8 +1,8 @@
 import Navigation from "./NavMenu";
 import VideoCards from "./Videos";
 
-import "../src/styles/MainSection.scss";
-import "../src/styles/VideosCards.scss";
+import "../styles/MainSection.scss";
+import "../styles/VideosCards.scss";
 
 type Props = {
   query: string;

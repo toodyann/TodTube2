@@ -1,5 +1,6 @@
-import "../src/styles/VideosCards.scss";
-import defaultVideos from "../src/scripts/data.jsx";
+import "../styles/VideosCards.scss";
+import defaultVideos from "../scripts/data.jsx";
+import { NavLink } from "react-router-dom";
 
 type Video = {
   id: number;
@@ -11,12 +12,15 @@ type Video = {
 
 function VideoCard({ item }: { item: Video }) {
   return (
-    <div className="video-card">
-      <video className="video" src={item.video} controls />
-      <h4>{item.user}</h4>
-      <p>{item.description}</p>
-      <span>{item.views} Переглядів</span>
-    </div>
+    <>
+      <div className="video-card">
+        <video className="video" src={item.video} controls />
+
+        <NavLink to="/focus">{item.user}</NavLink>
+        <p>{item.description}</p>
+        <span>{item.views} Переглядів</span>
+      </div>
+    </>
   );
 }
 

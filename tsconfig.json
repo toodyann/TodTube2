@@ -16,6 +16,6 @@
     "noEmit": true,
     "baseUrl": "src"
   },
-  "include": ["src", "index.html", "vite.config.js"],
+  "include": ["src", "index.html", "vite.config.js", "Components"],
   "exclude": ["node_modules", "dist"]
 }
