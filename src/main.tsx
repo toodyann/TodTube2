@@ -1,13 +1,16 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../Components/Header";
 import MainSection from "../Components/MainSection";
 import Snowfall from "react-snowfall";
 
 import "./styles/index.scss";
 import videos from "./scripts/data.jsx";
+import { NotFound } from '../Components/NotFound';
+import { Community } from '../Components/Community';
 
-function App() {
+function Home() {
   const [query, setQuery] = useState("");
 
   return (
@@ -19,8 +22,20 @@ function App() {
   );
 }
 
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/community" element={<Community />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
