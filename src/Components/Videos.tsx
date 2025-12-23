@@ -2,35 +2,37 @@ import "../styles/VideosCards.scss";
 import defaultVideos from "../scripts/data.jsx";
 import { NavLink } from "react-router-dom";
 
-type Video = {
+type image = {
   id: number;
   user: string;
   description: string;
   views: number;
-  video: string;
+  image: string;
 };
 
-function VideoCard({ item }: { item: Video }) {
+function VideoCard({ item }: { item: image }) {
   return (
     <>
-      <div className="video-card">
-        <video className="video" src={item.video} controls />
-
-        <NavLink to="/focus">{item.user}</NavLink>
-        <p>{item.description}</p>
-        <span>{item.views} Переглядів</span>
-      </div>
+      <NavLink to="/focus">
+        {" "}
+        <div className="video-card">
+          <img className="video" src={item.image} />
+          {item.user}
+          <p>{item.description}</p>
+          <span>{item.views} Переглядів</span>
+        </div>
+      </NavLink>
     </>
   );
 }
 
 interface Props {
   query?: string;
-  videos?: Video[];
+  image?: image[];
 }
 
-export default function VideoCards({ query = "", videos }: Props) {
-  const source = videos ?? defaultVideos;
+export default function VideoCards({ query = "", image }: Props) {
+  const source = image ?? defaultVideos;
   const q = (query || "").toLowerCase();
 
   const filteredVideos = source.filter(
@@ -41,7 +43,7 @@ export default function VideoCards({ query = "", videos }: Props) {
 
   return (
     <main className="video-wrapper">
-      {filteredVideos.map((item: Video) => (
+      {filteredVideos.map((item: image) => (
         <VideoCard key={item.id} item={item} />
       ))}
     </main>

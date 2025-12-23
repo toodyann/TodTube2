@@ -6,15 +6,15 @@ import "../styles/VideosCards.scss";
 
 type Props = {
   query: string;
-  videos: any[];
+  image: any[];
 };
 
-export default function MainSection({ query, videos }: Props) {
+export default function MainSection({ query, image }: Props) {
   return (
     <div className="main-section-wrapper">
       <Navigation />
       <div className="video-wrapper test">
-        <VideoCards query={query} videos={videos} />
+        <VideoCards query={query} image={image} />
       </div>
     </div>
   );
