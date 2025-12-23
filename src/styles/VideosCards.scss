@@ -16,30 +16,23 @@
 }
 
 .video-card {
-  border-radius: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   color: #ffffffcc;
-  border-radius: 30px;
-  padding: 12px;
   overflow: hidden;
   background-color: #181818;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
-}
-.video-card img {
-  display: block;
-  border-bottom: 1px solid #303030;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+
+  gap: 0;
+  padding: 10px;
 }
 
 .video-card .content {
   padding: 12px;
   color: #fff;
-}
-
-.video-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .user {
@@ -58,4 +51,74 @@
 .views {
   font-size: 16px;
   color: #aaaaaa;
+}
+
+.video-card img {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .video-card img {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .video-card img {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-card img {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .video-card img {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1536px) {
+  .video-card img {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(64, 64, 64, 0.25);
+}
+
+.video-card img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-card img {
+  transition: transform 0.25s ease;
+}
+
+.video-card:hover .video-card img {
+  transform: scale(1.05);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-card {
+  animation: cardFadeIn 0.5s ease both;
 }

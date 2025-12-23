@@ -34,8 +34,8 @@ export default function VideoCards({
         <NavLink key={item.id} to={`/focus/${item.id}`} className="video-link">
           <div className="video-card">
             <img className="prev" src={item.image} />
-            <h4>{item.user}</h4>
             <p>{item.description}</p>
+            <h4>{item.user}</h4>
             <span>{item.views} Переглядів</span>
           </div>
         </NavLink>
