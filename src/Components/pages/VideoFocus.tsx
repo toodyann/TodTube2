@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import videos from "../../scripts/data.jsx";
+import Header from "../../Components/Header";
 
 type Video = {
   id: number;
@@ -20,10 +21,18 @@ export default function Focus() {
 
   return (
     <div className="video-card focus">
+      <Header
+        query={""}
+        setQuery={function (value: string): void {
+          throw new Error("Function not implemented.");
+        }}
+      />
       <video className="video_in_focus" src={video.video} controls autoPlay />
-      <p className="description">{video.description}</p>
-      <h2 className="user">{video.user}</h2>
-      <span className="views">{video.views} Переглядів</span>
+      <div className="items">
+        <p className="description">{video.description}</p>
+        <h2 className="user">{video.user}</h2>
+        <span className="views">{video.views} Переглядів</span>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import "../styles/Header.scss";
-import TodTubeLogo from "../assets/TodTube-logo.png";
 import searchIcon from "../assets/search-icon.svg";
-
+import HeaderLogo from "../Components/common/Header.logo";
 type Props = {
   query: string;
   setQuery: (value: string) => void;
@@ -10,7 +9,7 @@ type Props = {
 export default function Header({ query, setQuery }: Props) {
   return (
     <header className="header">
-      <img className="Logo" src={TodTubeLogo} alt="TodTube-logo" />
+      <HeaderLogo />
       <div className="search-input-wrapper">
         <input
           type="text"

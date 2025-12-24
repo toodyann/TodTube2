@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import MainSection from "./Components/MainSection";
 import Snowfall from "react-snowfall";
+import HeaderLogo from "./Components/common/Header.logo";
 
 import "./styles/index.scss";
 import videos from "./scripts/data.jsx";
@@ -29,6 +30,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/" element={<HeaderLogo />} />
       <Route path="/community" element={<Community />} />
       <Route path="/playlists" element={<Playlists />} />
       <Route path="/channels" element={<Channels />} />
