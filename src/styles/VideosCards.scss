@@ -3,6 +3,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .prev {
@@ -12,40 +13,39 @@
 
 .video-card .content {
   padding: 12px;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .prev-card {
-  margin-left: 20px;
-  margin-bottom: 20px;
   color: #ffffffcc;
   overflow: hidden;
   background-color: #181818;
+  border-radius: 30px;
 
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   will-change: transform;
 
   gap: 0;
-  padding: 10px;
+  padding: 5px;
 }
 
 .video-card .content {
   padding: 12px;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .user {
   margin: 0;
   font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: var(--white-color);
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 18px;
-  color: #ffffff;
+  color: var(--white-color);
   margin-bottom: 8px;
 }
 .views {
@@ -87,10 +87,17 @@
   .prev-card img {
     grid-template-columns: repeat(6, 1fr);
   }
+  @media (max-width: 600px) {
+    .video-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 
 .prev-card:hover {
   transform: translateY(-2px);
+
   box-shadow: 0 8px 24px rgba(64, 64, 64, 0.25);
 }
 
@@ -131,4 +138,51 @@ video {
 
 .items {
   margin-left: 30px;
+}
+
+.yt-player {
+  position: relative;
+  background: #000;
+}
+
+.yt-player video {
+  width: 100%;
+  cursor: pointer;
+}
+
+.yt-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.yt-controls button {
+  background: none;
+  border: none;
+  color: var(--white-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yt-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.yt-filled {
+  height: 100%;
+  background: #0099ff;
+  width: 0;
+}
+
+.yt-controls span {
+  color: var(--white-color);
+  font-size: 12px;
 }

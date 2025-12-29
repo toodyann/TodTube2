@@ -67,7 +67,7 @@ const videos = [
   {
     id: 7,
     user: "Admin",
-    description: "Відео 7",
+    description: "1",
     views: 7000,
     video: video6,
     image: image6,
@@ -75,7 +75,7 @@ const videos = [
   {
     id: 8,
     user: "Admin",
-    description: "Відео 8",
+    description: "Відео дублікат",
     views: 8000,
     video: video7,
     image: image7,

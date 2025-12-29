@@ -1,4 +1,5 @@
 import "../styles/VideosCards.scss";
+import "../styles/variables.scss";
 import defaultVideos from "../scripts/data.jsx";
 import { NavLink } from "react-router-dom";
 
